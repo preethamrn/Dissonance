@@ -4,12 +4,10 @@ using System.Collections;
 public class PlayerControls : MonoBehaviour {
 
     int lane = 2;
-    ProjectileScript projectileScript;
     GameObject player;
 
 	// Use this for initialization
 	void Start () {
-        projectileScript = FindObjectOfType<ProjectileScript>();
         GameObject playerPrefab = (GameObject)Resources.Load("Player");
         player = Instantiate(playerPrefab);
 	}
