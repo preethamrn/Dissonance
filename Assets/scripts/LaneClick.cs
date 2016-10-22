@@ -9,12 +9,8 @@ public class LaneClick : MonoBehaviour {
     // Use this for initialization
     void Start () {
         
-        //For Desktop X,Y is switched for getting vector... Don't ask why.
-        screenSizeX = Screen.currentResolution.height;
-        screenSizeY = Screen.currentResolution.width;
-
-        //screenSizeX = Screen.currentResolution.width;
-        //screenSizeY = Screen.currentResolution.height;
+        screenSizeX = Screen.width;
+        screenSizeY = Screen.height;
         player = FindObjectOfType<PlayerControls>();
         Debug.Log(screenSizeX.ToString() + " " + screenSizeY.ToString());
     }
@@ -24,7 +20,7 @@ public class LaneClick : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
             Debug.Log(touch);
-            int lane = (int)touch.x / (screenSizeX / 5);
+            int lane = (int)(touch.x / (screenSizeX / 5.0));
             //Instantiate(go, new Vector3(18*touch.x/screenSizeX-9, 32*touch.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
             player.move(lane);
