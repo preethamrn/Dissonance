@@ -20,7 +20,9 @@ public class PlayerControls : MonoBehaviour {
     public void move(int newLane) {
         if (newLane > lane) lane++;
         else if (newLane < lane) lane--;
-        
+
+        FindObjectOfType<SyncClient>().MeChangedLane(lane); //move player on enemy screen
+
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, -14); //move player
     }
 

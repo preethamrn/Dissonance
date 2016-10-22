@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class BeatController : MonoBehaviour {
 
-	PlayerControls player;
+    PlayerControls player;
+    EnemyControls enemy;
     ProjectileScript projectileScript;
     GameObject playerBullet;
     Text countdown;
@@ -27,8 +28,9 @@ public class BeatController : MonoBehaviour {
 
 
 	void Start () {
-        
-		player = FindObjectOfType<PlayerControls>();
+
+        player = FindObjectOfType<PlayerControls>();
+        enemy = FindObjectOfType<EnemyControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
         playerBullet = (GameObject)Resources.Load("Bullet");
         countdown = FindObjectOfType<Text>();
@@ -55,8 +57,8 @@ public class BeatController : MonoBehaviour {
             if (beat == beatDelay) Destroy(countdown);
 
 			Debug.Log("Delay");
-			player.animate();
-		}
+            animate();
+        }
 
 		else if (beat >= beatDelay) {
 			if (illegalMove) {
@@ -69,8 +71,8 @@ public class BeatController : MonoBehaviour {
 				playerMoved = true;
 			}
 
-            if (!animated && beatCooldownLeft <= 0) {
-                player.animate();
+            if (!animated && beatCooldownLeft - buffer <= 0) {
+                animate();
                 animated = true;
             }
 
@@ -111,4 +113,9 @@ public class BeatController : MonoBehaviour {
     	illegalMove = false;
         animated = false;
 	}
+
+    void animate() {
+        player.animate();
+        enemy.animate();
+    }
 }
