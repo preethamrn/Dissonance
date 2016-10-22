@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BeatController : MonoBehaviour {
 
@@ -25,7 +26,7 @@ public class BeatController : MonoBehaviour {
 	
 
 	void Start () {
-
+        
 		player = FindObjectOfType<PlayerControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
         playerBullet = (GameObject)Resources.Load("Bullet");
@@ -37,7 +38,7 @@ public class BeatController : MonoBehaviour {
 		reset();
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -46,6 +47,13 @@ public class BeatController : MonoBehaviour {
 		if (beat < beatDelay && beatCooldownLeft <= 0) {
 			beatCooldownLeft = beatCooldown;
 			beat++;
+
+            //UI stuff for countdown
+            Text countdown = FindObjectOfType<Text>();
+            countdown.text = (beatDelay - beat).ToString();
+            if (beat == beatDelay) Destroy(countdown);
+            player.animate();
+
 			Debug.Log("Delay");
 		}
 
