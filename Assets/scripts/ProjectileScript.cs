@@ -36,14 +36,8 @@ public class Projectile
 public class ProjectileScript : MonoBehaviour {
     
     List<Projectile> projectileList = new List<Projectile>();
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void move () {
+    
+	public void move () {
         for (int i = 0; i < projectileList.Count; i++) {
             projectileList[i].m_height += projectileList[i].m_velocity;
 
