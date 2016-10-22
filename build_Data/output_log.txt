@@ -16,18 +16,38 @@ Platform assembly: F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Ma
 Loading F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.117 seconds
+- Completed reload, in  0.116 seconds
 Platform assembly: F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Zhouball\Documents\Unity Projects\Dissonance\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.678223 ms
+UnloadTime: 0.695466 ms
 1 players have connected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+The PlayerPrefab is empty on the NetworkManager. Please setup a PlayerPrefab object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 1 players have connected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
@@ -369,6 +389,14 @@ UnloadTime: 0.678223 ms
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+The PlayerPrefab is empty on the NetworkManager. Please setup a PlayerPrefab object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -377,6 +405,26 @@ UnloadTime: 0.678223 ms
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Two Players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+2 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+2 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+2 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+2 players have connected
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+2 players have connected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -677,15 +725,15 @@ Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-UnloadTime: 0.229085 ms
+UnloadTime: 0.243043 ms
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 304.
-Total: 0.296004 ms (FindLiveObjects: 0.013137 ms CreateObjectMapping: 0.014369 ms MarkObjects: 0.252486 ms  DeleteObjects: 0.011495 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 291.
+Total: 0.288614 ms (FindLiveObjects: 0.013548 ms CreateObjectMapping: 0.015600 ms MarkObjects: 0.244685 ms  DeleteObjects: 0.010263 ms)
 
 Hit Lane0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 25ac -> priority: 1 
-  Thread -> id: 3f78 -> priority: 1 
+  Thread -> id: 3680 -> priority: 1 
+  Thread -> id: 99c -> priority: 1 
