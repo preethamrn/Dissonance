@@ -68,7 +68,7 @@ public class BeatController : MonoBehaviour {
 
 				player.move(laneToMove);
                 projectileScript.move();
-                player.GetComponent<Animator>().SetTrigger("pulse");
+                
 
 
 
@@ -86,6 +86,5 @@ public class BeatController : MonoBehaviour {
 			playerMovedCD = beatCooldownLeft;
 		}
 	}
-
-
+    
 }
