@@ -9,5 +9,6 @@ public class GridInit : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             Instantiate(lane, new Vector3((float)18/5 * (float)(i + 0.5) - 9, 0, 0), Quaternion.identity);
         }
+
     }
 }
