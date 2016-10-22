@@ -60,4 +60,10 @@ public class ProjectileScript : MonoBehaviour {
         int i = projectileList.Count - 1;
         projectileList[i].obj.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(projectileList[i].m_lane + 0.5) - ApplicationModel.xRatio, -14 + 4 * projectileList[i].m_height);
     }
+
+    public void animate() {
+        foreach (Projectile p in projectileList) {
+            p.obj.GetComponent<Animator>().SetTrigger("pulse");
+        }
+    }
 }
