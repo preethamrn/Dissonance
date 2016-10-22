@@ -3,10 +3,9 @@ using System.Collections;
 
 public class BulletArray : MonoBehaviour {
     const int width = 5;
-    const int height = 8;
+    const int height = 9;
 
     //intialized to 0 in C#
-    ArrayList<>
     public int[,] bulletArr = new int[width, height];
 
 
