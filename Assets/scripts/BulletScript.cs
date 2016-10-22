@@ -3,12 +3,25 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 
-    float moveLength;
+ 
    // bool enemyShot = false;
     // Use this for initialization
-    void Start()
+    void Start(uint lane, uint typeOfBullet)
     {
-        moveLength = Screen.currentResolution.height /7;
+        //find out whether to make bullet, enemy bullet, or powerup
+        switch(typeOfBullet)
+        {
+            case 1:
+
+                break;
+            default:
+                Debug.Log("ERROR, Not a valid type for bullet!")
+                break;
+        }
+        if (lane > 4)
+            Debug.Log("ERROR! Lane specified for bullet creation not valid");
+        //this.transform.position.x = (lane*spacebetween) + intialOffset;
+       
     }
 
     // Update is called once per frame

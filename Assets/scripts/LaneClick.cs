@@ -35,6 +35,7 @@ public class LaneClick : MonoBehaviour {
             int lane = (int)touch.position.x / (screenSizeX / 5);
             Instantiate(go, new Vector3(18*touch.position.x/screenSizeX-9, 32*touch.position.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
+            ShootBullet.shoot(lane);
         }
     }
 }
