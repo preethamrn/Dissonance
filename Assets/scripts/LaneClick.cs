@@ -4,8 +4,7 @@ using System.Collections;
 public class LaneClick : MonoBehaviour {
 
     int screenSizeX, screenSizeY;
-    public Transform go;
-
+    GameObject go;
     // Use this for initialization
     void Start () {
         /*
@@ -13,6 +12,7 @@ public class LaneClick : MonoBehaviour {
         screenSizeX = Screen.currentResolution.height;
         screenSizeY = Screen.currentResolution.width;
         */
+        go = (GameObject)Resources.Load("Lane"); ;
 
         screenSizeX = Screen.currentResolution.width;
         screenSizeY = Screen.currentResolution.height;
