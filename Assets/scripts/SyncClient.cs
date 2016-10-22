@@ -16,8 +16,7 @@ public class SyncClient : NetworkBehaviour {
 	}
 
     public void MeChangedLane(int lane) {
-        if(isLocalPlayer)
-            CmdChangeLane(lane);
+        CmdChangeLane(lane);
     }
 
 	[Command]

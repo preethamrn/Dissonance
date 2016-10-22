@@ -81,9 +81,6 @@ public class BeatController : MonoBehaviour {
                     // the player lost
                     //Debug.Log("No Move");
                 } else if (illegalMove) ;
-                else if (playerMoved) {
-                    projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
-                }
 
 				//Debug.Log("Beat");
 
