@@ -21,8 +21,6 @@ public class BeatController : MonoBehaviour {
 	bool illegalMove;
 	bool recievedInput;
 	bool playerMoved;
-	bool playerFault;
-
 	
 
 	void Start () {
@@ -58,10 +56,9 @@ public class BeatController : MonoBehaviour {
 		}
 
 		else if (beat >= beatDelay) {
-			if (!playerFault && illegalMove) {
+			if (illegalMove) {
 				// the player lost
-				Debug.Log("Player lost due to clicking out of buffer!");
-				playerFault = true;
+				Debug.Log("Illegal Move");
 			}
 
 			else if (recievedInput && !playerMoved) {
@@ -70,15 +67,13 @@ public class BeatController : MonoBehaviour {
 			}
  
 			if (beatCooldownLeft + buffer <= 0) {
-				if (!playerFault && !recievedInput) {
-					// the player lost
-					Debug.Log("Illegal Move");
-					playerFault = true;
-				}
-
-				else if (playerMoved) {
-					projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
-				}
+                if (!recievedInput) {
+                    // the player lost
+                    Debug.Log("No Move");
+                } else if (illegalMove) ;
+                else if (playerMoved) {
+                    projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
+                }
 
 				Debug.Log("Beat");
 
@@ -96,9 +91,7 @@ public class BeatController : MonoBehaviour {
 
 		if ((beatCooldownLeft <= (2 * buffer)) && !playerMoved) {
 			laneToMove = lane;
-		}
-
-		else {
+		} else {
 			illegalMove = true;
 		}
 
@@ -108,7 +101,6 @@ public class BeatController : MonoBehaviour {
 	void reset() {
 		recievedInput = false;
     	playerMoved = false;
-    	playerFault = false;
     	illegalMove = false;
 
 	}

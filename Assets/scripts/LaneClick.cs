@@ -23,7 +23,7 @@ public class LaneClick : MonoBehaviour {
             //Debug.Log(touch);
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
             //Instantiate(go, new Vector3(18*touch.x/screenSizeX-9, 32*touch.y/screenSizeY-16, 0), Quaternion.identity);
-            //Debug.Log("Hit Lane" + lane);
+            Debug.Log("Hit Lane" + lane);
             beatController.input(lane);
         }
 
