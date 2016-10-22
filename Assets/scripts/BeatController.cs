@@ -5,33 +5,36 @@ public class BeatController : MonoBehaviour {
 
 	PlayerControls player;
     ProjectileScript projectileScript;
+    GameObject playerBullet;
 
-	const float BPM = 130f;
+	const float BPM = 120f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.1f;
-
+	const float buffer = 0.15f;
+	const int beatDelay = 10;
 
 	float beatCooldownLeft;
-	float playerMovedCD;
 
 	int laneToMove;
 	int beat;
-	int beatDelay;
 
-	bool playerDied;
+	bool illegalMove;
+	bool recievedInput;
+	bool playerMoved;
+	bool playerFault;
 
-	// MUSICAL BEATS OCCUR EVERY BEAT - (BUFFER / 2) 
+	
 
-	// Use this for initialization
 	void Start () {
 
 		player = FindObjectOfType<PlayerControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
-        beatCooldownLeft = buffer;
-		playerMovedCD = 0f;
+        playerBullet = (GameObject)Resources.Load("Bullet");
+
+        beatCooldownLeft = 0f;
+        laneToMove = 2;
 		beat = 0;
-		beatDelay = 10;
-		playerDied = false;
+
+		reset();
 
 	}
 	
@@ -39,7 +42,6 @@ public class BeatController : MonoBehaviour {
 	void Update () {
 
 		beatCooldownLeft -= Time.deltaTime;
-		playerMovedCD -= Time.deltaTime;
 
 		if (beat < beatDelay && beatCooldownLeft <= 0) {
 			beatCooldownLeft = beatCooldown;
@@ -48,44 +50,57 @@ public class BeatController : MonoBehaviour {
 		}
 
 		else if (beat >= beatDelay) {
-
-			if (playerDied == false && playerMovedCD >= buffer) {
+			if (!playerFault && illegalMove) {
 				// the player lost
-				Debug.Log("Player lost due to clicking too early!");
-				playerDied = true;
+				Debug.Log("Player lost due to clicking out of buffer!");
+				playerFault = true;
 			}
 
-			else if (beatCooldownLeft <= 0) {
-
-				if (playerMovedCD < 0 - beatCooldown) {
+			else if (recievedInput && !playerMoved) {
+				player.move(laneToMove);
+				playerMoved = true;
+			}
+ 
+			if (beatCooldownLeft + buffer <= 0) {
+				if (!playerFault && !recievedInput) {
 					// the player lost
-					Debug.Log("Player Lost due to not clicking!");
+					Debug.Log("Illegal Move");
+					playerFault = true;
 				}
 
-				Debug.Log("On Beat");
+				else if (playerMoved) {
+					projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
+				}
 
-				// MOVE ALL OBJECTS
+				Debug.Log("Beat");
 
-				player.move(laneToMove);
                 projectileScript.move();
                 player.GetComponent<Animator>().SetTrigger("pulse");
 
-
-
-                beatCooldownLeft = beatCooldown;
+                beatCooldownLeft = beatCooldown - buffer;
+                reset();
 				beat++;
-				playerDied = false;
 			}
 		}
 	}
 
 	public void input(int lane) {
 
-		if (playerMovedCD <= 0) {
+		if ((beatCooldownLeft <= (2 * buffer)) && !playerMoved) {
 			laneToMove = lane;
-			playerMovedCD = beatCooldownLeft;
 		}
+
+		else {
+			illegalMove = true;
+		}
+
+		recievedInput = true;
 	}
 
-
+	void reset() {
+		recievedInput = false;
+    	playerMoved = false;
+    	playerFault = false;
+    	illegalMove = false;
+	}
 }

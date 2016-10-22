@@ -21,7 +21,7 @@ public class Projectile
                 m_velocity = -1;
                 break;
             default:
-                Debug.Log("Error, not correct type for projectile");
+                //Debug.Log("Error, not correct type for projectile");
                 break;       
         }
     }
@@ -54,7 +54,7 @@ public class ProjectileScript : MonoBehaviour {
 	}
 
     public void addProjectile(int type, int lane, GameObject obj) {
-        Debug.Log("adding projectile of type " + type + " on lane " + lane);
+        //Debug.Log("adding projectile of type " + type + " on lane " + lane);
         projectileList.Add(new Projectile(type, lane, obj));
         int i = projectileList.Count - 1;
         projectileList[i].obj.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(projectileList[i].m_lane + 0.5) - ApplicationModel.xRatio, -14 + 4 * projectileList[i].m_height);

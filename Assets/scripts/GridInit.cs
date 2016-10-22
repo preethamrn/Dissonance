@@ -7,7 +7,7 @@ public class GridInit : MonoBehaviour {
     void Start() {
         GameObject lane = (GameObject) Resources.Load("Lane");
         for (int i = 0; i < 5; i++) {
-            Debug.Log(ApplicationModel.xRatio * 2 / 5 * (float)(i + 0.5) - ApplicationModel.xRatio);
+            //Debug.Log(ApplicationModel.xRatio * 2 / 5 * (float)(i + 0.5) - ApplicationModel.xRatio);
             Instantiate(lane, new Vector3(ApplicationModel.xRatio * 2 / 5 * (float)(i + 0.5) - ApplicationModel.xRatio, 0, 0), Quaternion.identity);
         }
 
