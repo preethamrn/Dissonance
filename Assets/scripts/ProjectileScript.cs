@@ -55,7 +55,7 @@ public class ProjectileScript : MonoBehaviour {
                 continue;
             }
 
-            projectileList[i].obj.transform.position = new Vector2((float)18 / 5 * (float)(projectileList[i].m_lane + 0.5) - 9, -14 + 4*projectileList[i].m_height);
+            projectileList[i].obj.transform.position = new Vector2(projectileList[i].obj.transform.position.x, -14 + 4*projectileList[i].m_height);
         }
 	}
 
