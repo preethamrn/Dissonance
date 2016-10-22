@@ -3,9 +3,11 @@ using System.Collections;
 
 public class BeatController : MonoBehaviour {
 
+	PlayerControls player;
+
 	const float BPM = 120f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.4f;
+	const float buffer = 0.1f;
 
 
 	float beatCooldownLeft;
@@ -22,6 +24,7 @@ public class BeatController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		player = FindObjectOfType<PlayerControls>();
 		beatCooldownLeft = buffer;
 		playerMovedCD = 0f;
 		beat = 0;
@@ -58,10 +61,13 @@ public class BeatController : MonoBehaviour {
 				}
 
 				Debug.Log("On Beat");
+
 				// MOVE ALL OBJECTS
 
-
+				player.move(laneToMove);
 				
+
+
 
 				beatCooldownLeft = beatCooldown;
 				beat++;

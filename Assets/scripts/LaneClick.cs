@@ -3,16 +3,16 @@ using System.Collections;
 
 public class LaneClick : MonoBehaviour {
 
-    PlayerControls player;
+    BeatController beatController;
 
     // Use this for initialization
     void Start () {
         
+        beatController = FindObjectOfType<BeatController>();
         ApplicationModel.screenSizeX = Screen.width;
         ApplicationModel.screenSizeY = Screen.height;
         ApplicationModel.yRatio = 16;
         ApplicationModel.xRatio = (float) ApplicationModel.screenSizeX / (float) ApplicationModel.screenSizeY * (float) ApplicationModel.yRatio;
-        player = FindObjectOfType<PlayerControls>();
         Debug.Log(ApplicationModel.screenSizeX.ToString() + " " + ApplicationModel.screenSizeY.ToString());
     }
 	
@@ -24,7 +24,7 @@ public class LaneClick : MonoBehaviour {
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
             //Instantiate(go, new Vector3(18*touch.x/screenSizeX-9, 32*touch.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
-            player.move(lane);
+            beatController.input(lane);
         }
 
         /*Touch[] touches = Input.touches;
@@ -33,7 +33,7 @@ public class LaneClick : MonoBehaviour {
             int lane = (int)touch.position.x / (screenSizeX / 5);
             //Instantiate(go, new Vector3(18*touch.position.x/screenSizeX-9, 32*touch.position.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
-            player.move(lane);
+            beatController.input(lane);
         }*/
     }
 }
