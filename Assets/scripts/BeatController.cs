@@ -71,6 +71,7 @@ public class BeatController : MonoBehaviour {
 
             if (!animated && beatCooldownLeft <= 0) {
                 player.animate();
+                projectileScript.animate();
                 animated = true;
             }
 
