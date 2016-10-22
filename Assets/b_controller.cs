@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LaneClick : MonoBehaviour {
+public class b_controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
