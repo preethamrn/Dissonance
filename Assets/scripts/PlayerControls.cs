@@ -27,5 +27,7 @@ public class PlayerControls : MonoBehaviour {
         
         projectileScript.addProjectile(1, newLane, Instantiate(playerBullet)); //add projectile
         player.transform.position = new Vector2((float)18 / 5 * (float)(lane + 0.5) - 9, -14); //move player
+
+        player.GetComponent<Animator>().SetTrigger("pulse");
     }
 }
