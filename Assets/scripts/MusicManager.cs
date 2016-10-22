@@ -1,27 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicManager
+public class MusicManager : MonoBehaviour
 {
-    AudioSource m_song;
-    ulong m_delay;
-    MusicManager(AudioSource song)
-    {
-        m_song = song
+    AudioSource[] m_songs;
+   //ulong m_delay;
+    void Start()
+    {m_songs = gameObject.GetComponents<AudioSource>();}
 
-
-    }
 
     void playSong(int songNum)
-    {
-
-        m_song.Play(m_delay);
-    }
+    {m_songs[songNum].Play(0);}
 
     //delay is measured in seconds
     void playSong(int songNum, ulong delay)
-    { m_song.Play(delay); }
+    { m_songs[songNum].Play(delay); }
 
     void stopSong(int songNum)
-    { m_song.Stop(); }
+    {m_songs[songNum].Stop();}
 }
