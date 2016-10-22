@@ -17,8 +17,13 @@ public class BeatController: MonoBehaviour {
 	void Update () {
 	
 		beatCooldownLeft -= Time.deltaTime;
-		if(beatCooldownLeft >= 0) {
+		if(beatCooldownLeft <= 0) {
+
 			// Do all on Beat tasks
+			
+
+			
+
 			Debug.Log("on beat");
 			beatCooldownLeft = beatCooldown;
 		}
