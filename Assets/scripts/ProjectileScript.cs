@@ -33,7 +33,7 @@ public class Projectile
     public GameObject obj;
 }
 
-public class ProjectileList : MonoBehaviour {
+public class ProjectileScript : MonoBehaviour {
     
     List<Projectile> projectileList = new List<Projectile>();
 
@@ -44,13 +44,11 @@ public class ProjectileList : MonoBehaviour {
 	
 	// Update is called once per frame
 	void move () {
-        for (int i = 0; i < projectileList.Count; i++)
-        {
+        for (int i = 0; i < projectileList.Count; i++) {
             projectileList[i].m_height += projectileList[i].m_velocity;
 
             //have some effect if player is there, and delete
-            if (projectileList[i].m_height <=0 || projectileList[i].m_height >= 8)
-            {
+            if (projectileList[i].m_height <=0 || projectileList[i].m_height >= 8) {
                 Destroy(projectileList[i].obj);
                 projectileList.RemoveAt(i);
                 i--; //upper elements shift down into empty spot, check index again
@@ -60,4 +58,11 @@ public class ProjectileList : MonoBehaviour {
             projectileList[i].obj.transform.position = new Vector2((float)18 / 5 * (float)(projectileList[i].m_lane + 0.5) - 9, -14 + 4*projectileList[i].m_height);
         }
 	}
+
+    public void addProjectile(int type, int lane, GameObject obj) {
+        Debug.Log("adding projectile of type " + type + " on lane " + lane);
+        projectileList.Add(new Projectile(type, lane, obj));
+        int i = projectileList.Count - 1;
+        projectileList[i].obj.transform.position = new Vector2((float)18 / 5 * (float)(projectileList[i].m_lane + 0.5) - 9, -14 + 4 * projectileList[i].m_height);
+    }
 }
