@@ -54,14 +54,14 @@ public class BeatController : MonoBehaviour {
             countdown.text = (beatDelay - beat).ToString();
             if (beat == beatDelay) Destroy(countdown);
 
-			Debug.Log("Delay");
+			//Debug.Log("Delay");
 			player.animate();
 		}
 
 		else if (beat >= beatDelay) {
 			if (illegalMove) {
 				// the player lost
-				Debug.Log("Illegal Move");
+				//Debug.Log("Illegal Move");
 			}
 
 			else if (recievedInput && !playerMoved) {
@@ -78,13 +78,13 @@ public class BeatController : MonoBehaviour {
 			if (beatCooldownLeft + buffer <= 0) {
                 if (!recievedInput) {
                     // the player lost
-                    Debug.Log("No Move");
+                    //Debug.Log("No Move");
                 } else if (illegalMove) ;
                 else if (playerMoved) {
                     projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
                 }
 
-				Debug.Log("Beat");
+				//Debug.Log("Beat");
 
                 projectileScript.move();
 
