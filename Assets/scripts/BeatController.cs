@@ -8,7 +8,7 @@ public class BeatController : MonoBehaviour {
     ProjectileScript projectileScript;
     GameObject playerBullet;
 
-	const float BPM = 120f;
+	const float BPM = 110f;
 	const float beatCooldown = 60 / BPM;
 	const float buffer = 0.15f;
 	const int beatDelay = 10;
@@ -21,7 +21,7 @@ public class BeatController : MonoBehaviour {
 	bool illegalMove;
 	bool recievedInput;
 	bool playerMoved;
-	
+
 
 	void Start () {
         
@@ -50,9 +50,9 @@ public class BeatController : MonoBehaviour {
             Text countdown = FindObjectOfType<Text>();
             countdown.text = (beatDelay - beat).ToString();
             if (beat == beatDelay) Destroy(countdown);
-            player.animate();
 
 			Debug.Log("Delay");
+			player.animate();
 		}
 
 		else if (beat >= beatDelay) {
@@ -78,7 +78,7 @@ public class BeatController : MonoBehaviour {
 				Debug.Log("Beat");
 
                 projectileScript.move();
-                
+             	player.animate();
 
                 beatCooldownLeft = beatCooldown - buffer;
                 reset();

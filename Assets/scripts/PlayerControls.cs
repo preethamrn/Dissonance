@@ -24,7 +24,6 @@ public class PlayerControls : MonoBehaviour {
         else if (newLane < lane) lane--;
         
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, -14); //move player
-        this.animate();
     }
 
     public void animate() {
