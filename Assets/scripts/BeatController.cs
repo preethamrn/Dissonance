@@ -9,13 +9,9 @@ public class BeatController : MonoBehaviour {
     GameObject playerBullet;
     Text countdown;
 
-	const float BPM = 107f;
+    const float BPM = 107f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.05f;
-
-    const float BPM = 100f;
-	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.175f;
+	const float buffer = 0.2f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
@@ -116,7 +112,6 @@ public class BeatController : MonoBehaviour {
 		recievedInput = false;
     	playerMoved = false;
     	illegalMove = false;
-
 
         animated = false;
 	}
