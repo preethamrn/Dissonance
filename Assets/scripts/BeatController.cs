@@ -75,7 +75,7 @@ public class BeatController : MonoBehaviour {
 				Debug.Log("Beat");
 
                 projectileScript.move();
-                player.GetComponent<Animator>().SetTrigger("pulse");
+                
 
                 beatCooldownLeft = beatCooldown - buffer;
                 reset();
@@ -102,5 +102,6 @@ public class BeatController : MonoBehaviour {
     	playerMoved = false;
     	playerFault = false;
     	illegalMove = false;
+
 	}
 }
