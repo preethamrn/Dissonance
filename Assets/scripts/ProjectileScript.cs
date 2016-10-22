@@ -63,6 +63,6 @@ public class ProjectileScript : MonoBehaviour {
         Debug.Log("adding projectile of type " + type + " on lane " + lane);
         projectileList.Add(new Projectile(type, lane, obj));
         int i = projectileList.Count - 1;
-        projectileList[i].obj.transform.position = new Vector2((float)18 / 5 * (float)(projectileList[i].m_lane + 0.5) - 9, -14 + 4 * projectileList[i].m_height);
+        projectileList[i].obj.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(projectileList[i].m_lane + 0.5) - ApplicationModel.xRatio, -14 + 4 * projectileList[i].m_height);
     }
 }

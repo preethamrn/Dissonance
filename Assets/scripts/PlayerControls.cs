@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour {
 	void Start () {
         projectileScript = FindObjectOfType<ProjectileScript>();
         GameObject playerPrefab = (GameObject)Resources.Load("Player");
-        playerBullet = (GameObject)Resources.Load("P1Bullet");
+        playerBullet = (GameObject)Resources.Load("Bullet");
         player = Instantiate(playerPrefab);
 	}
 	
@@ -26,7 +26,7 @@ public class PlayerControls : MonoBehaviour {
         else if (newLane < lane) lane--;
         
         projectileScript.addProjectile(1, newLane, Instantiate(playerBullet)); //add projectile
-        player.transform.position = new Vector2((float)18 / 5 * (float)(lane + 0.5) - 9, -14); //move player
+        player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, -14); //move player
 
         player.GetComponent<Animator>().SetTrigger("pulse");
     }
