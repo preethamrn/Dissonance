@@ -7,11 +7,13 @@ public class BeatController : MonoBehaviour {
 	PlayerControls player;
     ProjectileScript projectileScript;
     GameObject playerBullet;
+    Text countdown;
 
-	const float BPM = 110f;
+
+    const float BPM = 120f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.15f;
-	const int beatDelay = 10;
+	const float buffer = 0.175f;
+	const int beatDelay = 16;
 
 	float beatCooldownLeft;
 
@@ -28,6 +30,7 @@ public class BeatController : MonoBehaviour {
 		player = FindObjectOfType<PlayerControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
         playerBullet = (GameObject)Resources.Load("Bullet");
+        countdown = FindObjectOfType<Text>();
 
         beatCooldownLeft = 0f;
         laneToMove = 2;
@@ -47,7 +50,6 @@ public class BeatController : MonoBehaviour {
 			beat++;
 
             //UI stuff for countdown
-            Text countdown = FindObjectOfType<Text>();
             countdown.text = (beatDelay - beat).ToString();
             if (beat == beatDelay) Destroy(countdown);
 
