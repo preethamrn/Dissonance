@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//constants for 
 public class ApplicationModel : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+   public const int empty = 0;
+   public const int playerBullet = 1;
+   public const int enemyBullet = 2;
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
