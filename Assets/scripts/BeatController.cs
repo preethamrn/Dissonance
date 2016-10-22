@@ -10,7 +10,7 @@ public class BeatController : MonoBehaviour {
     Text countdown;
 
 
-    const float BPM = 120f;
+    const float BPM = 100f;
 	const float beatCooldown = 60 / BPM;
 	const float buffer = 0.175f;
 	const int beatDelay = 16;
@@ -23,6 +23,7 @@ public class BeatController : MonoBehaviour {
 	bool illegalMove;
 	bool recievedInput;
 	bool playerMoved;
+    bool animated;
 
 
 	void Start () {
@@ -67,7 +68,12 @@ public class BeatController : MonoBehaviour {
 				player.move(laneToMove);
 				playerMoved = true;
 			}
- 
+
+            if (!animated && beatCooldownLeft <= 0) {
+                player.animate();
+                animated = true;
+            }
+
 			if (beatCooldownLeft + buffer <= 0) {
                 if (!recievedInput) {
                     // the player lost
@@ -80,7 +86,6 @@ public class BeatController : MonoBehaviour {
 				Debug.Log("Beat");
 
                 projectileScript.move();
-             	player.animate();
 
                 beatCooldownLeft = beatCooldown - buffer;
                 reset();
@@ -104,6 +109,6 @@ public class BeatController : MonoBehaviour {
 		recievedInput = false;
     	playerMoved = false;
     	illegalMove = false;
-
+        animated = false;
 	}
 }
