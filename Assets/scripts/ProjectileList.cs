@@ -4,8 +4,9 @@ using System.Collections.Generic; //for List!
 
 public class Projectile
 {
-    public Projectile(int type, int lane)
+    public Projectile(int type, int lane, GameObject obj)
     {
+        this.obj = obj;
         m_type = type;
         m_lane = lane;
 
@@ -16,7 +17,7 @@ public class Projectile
                 m_velocity = 1;
                 break;
             case 2:
-                m_height = ApplicationModel.height - 1;
+                m_height = ApplicationModel.height - 2;
                 m_velocity = -1;
                 break;
             default:
@@ -29,6 +30,7 @@ public class Projectile
     public int m_type;
     public int m_lane;
     public int m_height;
+    public GameObject obj;
 }
 
 public class ProjectileList : MonoBehaviour {
@@ -49,9 +51,13 @@ public class ProjectileList : MonoBehaviour {
             //have some effect if player is there, and delete
             if (projectileList[i].m_height <=0 || projectileList[i].m_height >= 8)
             {
+                Destroy(projectileList[i].obj);
                 projectileList.RemoveAt(i);
                 i--; //upper elements shift down into empty spot, check index again
+                continue;
             }
+
+            projectileList[i].obj.transform.position = new Vector2((float)18 / 5 * (float)(projectileList[i].m_lane + 0.5) - 9, -14 + 4*projectileList[i].m_height);
         }
 	}
 }
