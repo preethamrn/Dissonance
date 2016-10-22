@@ -1,0 +1,29 @@
+Initialize engine version: 5.4.2f2 (b7e030c65c9b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Games\Dissonance\Dissonance_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.269 seconds
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.734146 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 67cc -> priority: 1 
+  Thread -> id: 4048 -> priority: 1 

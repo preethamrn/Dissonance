@@ -10,7 +10,7 @@ public class BeatController : MonoBehaviour {
     Text countdown;
 
 
-    const float BPM = 100f;
+    const float BPM = 135f;
 	const float beatCooldown = 60 / BPM;
 	const float buffer = 0.175f;
 	const int beatDelay = 16;
