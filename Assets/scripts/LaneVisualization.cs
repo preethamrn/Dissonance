@@ -8,12 +8,24 @@ public class LaneVisualization : MonoBehaviour {
 
 	//List<GameObject> lanes;
 	GameObject[] lanes;
+	GameObject[] waves;
+	public Color c1 = Color.magenta;
+	public Color c2 = Color.green;
+	public int lengthOfLineRenderer = 50;
 	//public void AddLane(GameObject lane) {
 	//	lanes.Add(lane);
 	//}
 	//HingeJoint[] hinges = FindObjectsOfType(typeof(HingeJoint)) as HingeJoint[];
 	void Start() {
 		lanes = GameObject.FindGameObjectsWithTag("Lane");
+		waves = GameObject.FindGameObjectsWithTag("Wave");
+		foreach (GameObject go in waves) {
+			LineRenderer lineRenderer = go.AddComponent<LineRenderer>();
+			lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+			lineRenderer.SetColors(c1, c2);
+			lineRenderer.SetWidth(0.1F, 0.1F);
+			lineRenderer.SetVertexCount(lengthOfLineRenderer);
+		}
 	}
 
 	void Update() {
@@ -26,25 +38,32 @@ public class LaneVisualization : MonoBehaviour {
 		//float[] volumeData = new float[1024];
 		//AudioListener.GetOutputData(volumeData, 0);
 		float[] sums = new float[5];
-		for (int i = 0; i < 40; i++) {
+		for (int i = 0; i < 20; i++) {
 			sums[0] += musicData[i];
 		}
-		for (int i = 40; i < 150; i++) {
+		for (int i = 20; i < 50; i++) {
 			sums[1] += musicData[i];
 		}
-		for (int i = 150; i < 250; i++) {
+		for (int i = 50; i < 100; i++) {
 			sums[2] += musicData[i];
 		}
-		for (int i = 250; i < 400; i++) {
+		for (int i = 100; i < 200; i++) {
 			sums[3] += musicData[i];
 		}
-		for (int i = 400; i < 1024; i++) {
+		for (int i = 200; i < 1024; i++) {
 			sums[4] += musicData[i];
 		}
 
 		for (int i = 0; i < 5; i++) {
 			Debug.Log("SumData: " + i + " : " + sums[i] * 1000);
 			lanes[i].GetComponent<SpriteRenderer>().color = HSVtoRGB (sums [i] * 1, 1, 1, 1);
+			//for (int j = i; j < i + 2; j++) {
+				LineRenderer lr = waves[i].GetComponent<LineRenderer>();
+				for (int k = 0; k < lengthOfLineRenderer; k++) {
+                	Vector3 pos = new Vector3(lanes[i].transform.position.x + sums[i] * Mathf.Sin(k + ((Random.value + 1) * Mathf.Sin(Time.time * 0.5f) * 2) + (Random.value * 2)),  (k * (lanes[i].GetComponent<RectTransform>().rect.height / 39F)) - (5F / 8F) * lanes[i].GetComponent<RectTransform>().rect.height, 0);
+                	lr.SetPosition(k, pos);
+             	}
+			//}
 		}
 	}
 
