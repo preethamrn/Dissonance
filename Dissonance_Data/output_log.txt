@@ -23,22 +23,74 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.881853 ms
+UnloadTime: 0.905664 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.286150 ms
+UnloadTime: 0.260696 ms
 A connection has already been set as ready. There can only be one.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 311.
-Total: 0.260696 ms (FindLiveObjects: 0.013548 ms CreateObjectMapping: 0.013548 ms MarkObjects: 0.217999 ms  DeleteObjects: 0.011084 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 315.
+Total: 0.293540 ms (FindLiveObjects: 0.015190 ms CreateObjectMapping: 0.015600 ms MarkObjects: 0.243043 ms  DeleteObjects: 0.014779 ms)
 
-Hit Lane1
+Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Hit Lane0
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -46,88 +98,20 @@ Enemy at: 2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Enemy at: 3
+Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Enemy at: 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Hit Lane3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Enemy at: 3
+YOU LOSE
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.773739 ms
+UnloadTime: 4.660519 ms
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 210.
-Total: 3.938368 ms (FindLiveObjects: 0.019706 ms CreateObjectMapping: 0.011905 ms MarkObjects: 0.227853 ms  DeleteObjects: 3.678903 ms)
-
-Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
-Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
- 
-(Filename:  Line: 492)
-
-StartServer listen failed.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
-Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
- 
-(Filename:  Line: 492)
-
-StartServer listen failed.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
-Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
- 
-(Filename:  Line: 492)
-
-StartServer listen failed.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
-Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
- 
-(Filename:  Line: 492)
-
-StartServer listen failed.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 214.
+Total: 4.706090 ms (FindLiveObjects: 0.027096 ms CreateObjectMapping: 0.024632 ms MarkObjects: 0.283276 ms  DeleteObjects: 4.370673 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1968 -> priority: 1 
-  Thread -> id: 2388 -> priority: 1 
+  Thread -> id: 3178 -> priority: 1 
+  Thread -> id: 2c8 -> priority: 1 

@@ -12,7 +12,7 @@ public class BeatController : MonoBehaviour {
     const float BPM = 107f;
 	const float beatCooldown = 60 / BPM;
 	const float buffer = 0.2f;
-	const int beatDelay = 0;
+	const int beatDelay = 16;
 
 	float beatCooldownLeft;
 	float totalTime;
@@ -95,13 +95,10 @@ public class BeatController : MonoBehaviour {
                     Debug.Log("DRAW");
                     FindObjectOfType<Text>().text = "DRAW";
                     FindObjectOfType<LaneClick>().setGameOver();
-                } else if (enemyCol) {
-                    Debug.Log("YOU WIN");
-                    FindObjectOfType<Text>().text = "YOU WIN!";
-                    FindObjectOfType<LaneClick>().setGameOver();
                 } else if (playerCol) {
                     Debug.Log("YOU LOSE");
                     FindObjectOfType<Text>().text = "YOU LOSE";
+                    FindObjectOfType<SyncClient>().MeGameOver();
                     FindObjectOfType<LaneClick>().setGameOver();
                 }
                 beat++;

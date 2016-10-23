@@ -26,8 +26,7 @@ public class LaneClick : MonoBehaviour {
             Debug.Log("Hit Lane" + lane);
             if (!gameOver) beatController.input(lane);
             else {
-                NetworkServer.DisconnectAll();
-                Application.LoadLevel("connect");
+                Invoke("endGame", 3);
             }
         }
 
@@ -40,5 +39,9 @@ public class LaneClick : MonoBehaviour {
         }*/
     }
 
-    public void setGameOver() { gameOver = true;  }
+    public void setGameOver() { gameOver = true; }
+    void endGame() {
+        NetworkServer.DisconnectAll();
+        Application.LoadLevel("connect");
+    }
 }
