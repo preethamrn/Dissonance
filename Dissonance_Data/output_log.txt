@@ -16,23 +16,19 @@ Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Netwo
 Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.062 seconds
+- Completed reload, in  0.042 seconds
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.905664 ms
+UnloadTime: 0.787427 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.260696 ms
-A connection has already been set as ready. There can only be one.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
+UnloadTime: 0.317352 ms
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 315.
-Total: 0.293540 ms (FindLiveObjects: 0.015190 ms CreateObjectMapping: 0.015600 ms MarkObjects: 0.243043 ms  DeleteObjects: 0.014779 ms)
+Total: 0.242632 ms (FindLiveObjects: 0.013548 ms CreateObjectMapping: 0.013137 ms MarkObjects: 0.198293 ms  DeleteObjects: 0.013137 ms)
 
 Delay
  
@@ -94,24 +90,17 @@ Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Enemy at: 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
 Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-YOU LOSE
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.660519 ms
+UnloadTime: 10.364240 ms
 
 Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 214.
-Total: 4.706090 ms (FindLiveObjects: 0.027096 ms CreateObjectMapping: 0.024632 ms MarkObjects: 0.283276 ms  DeleteObjects: 4.370673 ms)
+Total: 10.603589 ms (FindLiveObjects: 0.091962 ms CreateObjectMapping: 0.066919 ms MarkObjects: 0.635115 ms  DeleteObjects: 9.808361 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3178 -> priority: 1 
-  Thread -> id: 2c8 -> priority: 1 
+  Thread -> id: 22f4 -> priority: 1 
+  Thread -> id: 226c -> priority: 1 
