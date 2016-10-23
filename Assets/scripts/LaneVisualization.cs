@@ -23,7 +23,7 @@ public class LaneVisualization : MonoBehaviour {
 			LineRenderer lineRenderer = go.AddComponent<LineRenderer>();
 			lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
 			lineRenderer.SetColors(c1, c2);
-			lineRenderer.SetWidth(0.2F, 0.2F);
+			lineRenderer.SetWidth(0.1F, 0.1F);
 			lineRenderer.SetVertexCount(lengthOfLineRenderer);
 		}
 	}
