@@ -9,13 +9,13 @@ public class BeatController : MonoBehaviour {
     ProjectileScript projectileScript;
     Text countdown;
 
-
-    const float BPM = 100f;
+    const float BPM = 107f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.175f;
+	const float buffer = 0.2f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
+	float totalTime;
 
 	int laneToMove;
 	int beat;
@@ -37,6 +37,8 @@ public class BeatController : MonoBehaviour {
         laneToMove = 2;
 		beat = 0;
 
+		totalTime = 0f;
+
 		reset();
 
 	}
@@ -45,9 +47,10 @@ public class BeatController : MonoBehaviour {
 	void Update () {
 
 		beatCooldownLeft -= Time.deltaTime;
+		totalTime += Time.deltaTime;
 
-		if (beat < beatDelay && beatCooldownLeft <= 0) {
-			beatCooldownLeft = beatCooldown;
+		if (beat < beatDelay && beatCooldownLeft + buffer <= 0) {
+			beatCooldownLeft = (beat * beatCooldown) - totalTime;
 			beat++;
 
             //UI stuff for countdown
@@ -84,9 +87,9 @@ public class BeatController : MonoBehaviour {
 
                 projectileScript.move();
 
-                beatCooldownLeft = beatCooldown - buffer;
-                reset();
 				beat++;
+				beatCooldownLeft = (beat * beatCooldown) - totalTime;
+                reset();
 			}
 		}
 	}
@@ -106,6 +109,7 @@ public class BeatController : MonoBehaviour {
 		recievedInput = false;
     	playerMoved = false;
     	illegalMove = false;
+
         animated = false;
 	}
 
