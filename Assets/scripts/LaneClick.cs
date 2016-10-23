@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class LaneClick : MonoBehaviour {
 
     BeatController beatController;
+    bool gameOver = false;
+    bool enemyReady = false;
 
     // Use this for initialization
     void Start () {
@@ -14,16 +17,22 @@ public class LaneClick : MonoBehaviour {
         ApplicationModel.yRatio = 16;
         ApplicationModel.xRatio = (float) ApplicationModel.screenSizeX / (float) ApplicationModel.screenSizeY * (float) ApplicationModel.yRatio;
         //Debug.Log(ApplicationModel.screenSizeX.ToString() + " " + ApplicationModel.screenSizeY.ToString());
+        
+        InvokeRepeating("PlayerReady", 0, 0.1f);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
+        if (!enemyReady) return; 
+
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
-            //Debug.Log(touch);
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
             Debug.Log("Hit Lane" + lane);
-            beatController.input(lane);
+            if (!gameOver) beatController.input(lane);
+            else {
+                Invoke("endGame", 3);
+            }
         }
 
         /*Touch[] touches = Input.touches;
@@ -34,4 +43,17 @@ public class LaneClick : MonoBehaviour {
             beatController.input(lane);
         }*/
     }
+
+    public void setGameOver() { gameOver = true; }
+    void endGame() {
+        NetworkServer.DisconnectAll();
+        Application.LoadLevel("connect");
+    }
+
+    void PlayerReady() {
+        FindObjectOfType<SyncClient>().MeReady();
+        if (enemyReady) CancelInvoke("PlayerReady");
+    }
+
+    public void setEnemyReady() { Debug.Log("Enemy Ready");  enemyReady = true; }
 }

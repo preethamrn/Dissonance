@@ -55,7 +55,9 @@ public class BeatController : MonoBehaviour {
 
             //UI stuff for countdown
             countdown.text = (beatDelay - beat).ToString();
-            if (beat == beatDelay) Destroy(countdown);
+            if (beat == beatDelay) {
+                countdown.text = "";
+            }
 
 			Debug.Log("Delay");
             animate();
@@ -87,7 +89,19 @@ public class BeatController : MonoBehaviour {
 
                 projectileScript.move();
 
-				beat++;
+                bool playerCol = projectileScript.collisions(player.getLane(), 0, 2);
+                bool enemyCol = projectileScript.collisions(enemy.getLane(), ApplicationModel.height - 1, 1);
+                if (playerCol && enemyCol) {
+                    Debug.Log("DRAW");
+                    FindObjectOfType<Text>().text = "DRAW";
+                    FindObjectOfType<LaneClick>().setGameOver();
+                } else if (playerCol) {
+                    Debug.Log("YOU LOSE");
+                    FindObjectOfType<Text>().text = "YOU LOSE";
+                    FindObjectOfType<SyncClient>().MeGameOver();
+                    FindObjectOfType<LaneClick>().setGameOver();
+                }
+                beat++;
 				beatCooldownLeft = (beat * beatCooldown) - totalTime;
                 reset();
 			}
