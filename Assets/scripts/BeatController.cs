@@ -4,18 +4,14 @@ using UnityEngine.UI;
 
 public class BeatController : MonoBehaviour {
 
-	PlayerControls player;
+    PlayerControls player;
+    EnemyControls enemy;
     ProjectileScript projectileScript;
-    GameObject playerBullet;
     Text countdown;
 
-	const float BPM = 107f;
+    const float BPM = 107f;
 	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.05f;
-
-    const float BPM = 100f;
-	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.175f;
+	const float buffer = 0.2f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
@@ -31,10 +27,10 @@ public class BeatController : MonoBehaviour {
 
 
 	void Start () {
-        
-		player = FindObjectOfType<PlayerControls>();
+
+        player = FindObjectOfType<PlayerControls>();
+        enemy = FindObjectOfType<EnemyControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
-        playerBullet = (GameObject)Resources.Load("Bullet");
         countdown = FindObjectOfType<Text>();
 
         beatCooldownLeft = 0f;
@@ -62,13 +58,13 @@ public class BeatController : MonoBehaviour {
             if (beat == beatDelay) Destroy(countdown);
 
 			Debug.Log("Delay");
-			player.animate();
-		}
+            animate();
+        }
 
 		else if (beat >= beatDelay) {
 			if (illegalMove) {
 				// the player lost
-				Debug.Log("Illegal Move");
+				//Debug.Log("Illegal Move");
 			}
 
 			else if (recievedInput && !playerMoved) {
@@ -76,21 +72,18 @@ public class BeatController : MonoBehaviour {
 				playerMoved = true;
 			}
 
-            if (!animated && beatCooldownLeft <= 0) {
-                player.animate();
+            if (!animated && beatCooldownLeft - buffer <= 0) {
+                animate();
                 animated = true;
             }
 
 			if (beatCooldownLeft + buffer <= 0) {
                 if (!recievedInput) {
                     // the player lost
-                    Debug.Log("No Move");
+                    //Debug.Log("No Move");
                 } else if (illegalMove) ;
-                else if (playerMoved) {
-                    projectileScript.addProjectile(1, laneToMove, Instantiate(playerBullet));
-                }
 
-				Debug.Log("Beat");
+				//Debug.Log("Beat");
 
                 projectileScript.move();
 
@@ -117,7 +110,12 @@ public class BeatController : MonoBehaviour {
     	playerMoved = false;
     	illegalMove = false;
 
-
         animated = false;
 	}
+
+    void animate() {
+        player.animate();
+        enemy.animate();
+        projectileScript.animate();
+    }
 }
