@@ -1,0 +1,58 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 870M (ID=0x1199)
+    Vendor:   NVIDIA
+    VRAM:     3039 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.077 seconds
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jaron\Documents\Dissonance\Dissonance_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.770203 ms
+Play Pressed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.251887 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 629.
+Total: 0.518743 ms (FindLiveObjects: 0.025231 ms CreateObjectMapping: 0.032929 ms MarkObjects: 0.452884 ms  DeleteObjects: 0.007270 ms)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.856015 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 642.
+Total: 1.172198 ms (FindLiveObjects: 0.073984 ms CreateObjectMapping: 0.045758 ms MarkObjects: 1.046895 ms  DeleteObjects: 0.004704 ms)
+
+Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
+ 
+(Filename:  Line: 492)
+
+StartServer listen failed.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3e20 -> priority: 1 
+  Thread -> id: 221c -> priority: 1 

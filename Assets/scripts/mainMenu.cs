@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class mainMenu : MonoBehaviour
         {
             Debug.Log("Play Pressed");
             //unsure exacltly what the difference between editorSceneManager and sceneManger is
-            UnityEditor.SceneManagement.EditorSceneManager.LoadScene("connect");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("network-init");
         }
 
         //DLC!!!
