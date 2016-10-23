@@ -11,11 +11,8 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         songs = GetComponents<AudioSource>();
-        
         theme = songs[0];
 		theme.Play();
-        
-
 	}
 	
 	// Update is called once per frame
@@ -29,6 +26,6 @@ public class AudioManager : MonoBehaviour {
     public void gameStart(int n)
     {
         Halt();
-        songs[n].Play();
+       songs[n].Play();
     }
 }
