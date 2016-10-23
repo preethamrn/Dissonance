@@ -33,4 +33,8 @@ public class EnemyControls : MonoBehaviour {
     public void animate() {
         player.GetComponent<Animator>().SetTrigger("pulse");
     }
+
+    public int getLane() {
+        return lane;
+    }
 }
