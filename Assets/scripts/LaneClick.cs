@@ -42,7 +42,7 @@ public class LaneClick : MonoBehaviour {
 
     public void setGameOver() { gameOver = true; }
     void endGame() {
-        NetworkServer.DisconnectAll();
+        //NetworkServer.DisconnectAll();
         Application.LoadLevel("connect");
     }
 }

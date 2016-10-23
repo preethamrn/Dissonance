@@ -11,7 +11,7 @@ public class BeatController : MonoBehaviour {
 
     public float BPM = 107f;
 	float beatCooldown = 0;
-	const float buffer = 0.2f;
+	const float buffer = 0.1f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
