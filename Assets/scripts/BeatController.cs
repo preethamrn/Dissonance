@@ -57,7 +57,7 @@ public class BeatController : MonoBehaviour {
             countdown.text = (beatDelay - beat).ToString();
             if (beat == beatDelay) Destroy(countdown);
 
-			Debug.Log("Delay");
+			//Debug.Log("Delay");
             animate();
         }
 
