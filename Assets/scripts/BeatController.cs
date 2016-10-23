@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 public class BeatController : MonoBehaviour {
 
+    AudioManager song;
 	PlayerControls player;
     ProjectileScript projectileScript;
     GameObject playerBullet;
     Text countdown;
 
+    int songName;
 
     const float BPM = 100f;
 	const float beatCooldown = 60 / BPM;
@@ -26,20 +28,20 @@ public class BeatController : MonoBehaviour {
     bool animated;
 
 
-	void Start () {
-        
-		player = FindObjectOfType<PlayerControls>();
+    void Start() {
+        song = FindObjectOfType<AudioManager>();
+        player = FindObjectOfType<PlayerControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
         playerBullet = (GameObject)Resources.Load("Bullet");
         countdown = FindObjectOfType<Text>();
 
         beatCooldownLeft = 0f;
         laneToMove = 2;
-		beat = 0;
+        beat = 0;
 
-		reset();
-
-	}
+        reset();
+        song.gameStart(songName);
+    }
 
 	// Update is called once per frame
 	void Update () {

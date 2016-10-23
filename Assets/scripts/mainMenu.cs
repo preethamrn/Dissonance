@@ -7,8 +7,6 @@ public class mainMenu : MonoBehaviour {
     public Texture menuTexture;
 
     
-
-
     void OnGUI()
     {
        
@@ -23,7 +21,7 @@ public class mainMenu : MonoBehaviour {
         {
             Debug.Log("Play Pressed");
             //unsure exacltly what the difference between editorSceneManager and sceneManger is
-            UnityEditor.SceneManagement.EditorSceneManager.LoadScene("current");
+            UnityEditor.SceneManagement.EditorSceneManager.LoadScene("connect");
         }
 
         //DLC!!!
