@@ -8,13 +8,18 @@ public class PlayerControls : MonoBehaviour {
     GameObject playerBullet;
     ProjectileScript projectileScript;
 
+    public Color color;
+
 	// Use this for initialization
 	void Start () {
         GameObject playerPrefab = (GameObject)Resources.Load("Player");
         playerBullet = (GameObject)Resources.Load("Bullet");
+        playerBullet = Instantiate(playerBullet);
+        playerBullet.GetComponent<SpriteRenderer>().color = this.color;
         projectileScript = FindObjectOfType<ProjectileScript>();
         player = Instantiate(playerPrefab);
-	}
+        player.GetComponent<SpriteRenderer>().color = this.color;
+    }
 	
 	// Update is called once per frame
 	void Update () {

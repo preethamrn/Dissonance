@@ -8,12 +8,17 @@ public class EnemyControls : MonoBehaviour {
     GameObject enemyBullet;
     ProjectileScript projectileScript;
 
+    public Color color;
+
     // Use this for initialization
     void Start() {
         GameObject playerPrefab = (GameObject)Resources.Load("Player");
         enemyBullet = (GameObject)Resources.Load("Bullet");
+        enemyBullet = Instantiate(enemyBullet);
+        enemyBullet.GetComponent<SpriteRenderer>().color = this.color;
         projectileScript = FindObjectOfType<ProjectileScript>();
         player = Instantiate(playerPrefab);
+        player.GetComponent<SpriteRenderer>().color = this.color;
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(2.5) - ApplicationModel.xRatio, 14);
     }
 
