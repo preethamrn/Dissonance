@@ -16,19 +16,19 @@ Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Netwo
 Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading E:\Games\Dissonance\Dissonance_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.042 seconds
+- Completed reload, in  0.040 seconds
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Games\Dissonance\Dissonance_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.787427 ms
+UnloadTime: 1.112990 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.317352 ms
+UnloadTime: 0.332131 ms
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 315.
-Total: 0.242632 ms (FindLiveObjects: 0.013548 ms CreateObjectMapping: 0.013137 ms MarkObjects: 0.198293 ms  DeleteObjects: 0.013137 ms)
+Total: 0.272602 ms (FindLiveObjects: 0.014779 ms CreateObjectMapping: 0.013958 ms MarkObjects: 0.227032 ms  DeleteObjects: 0.011084 ms)
 
 Delay
  
@@ -93,14 +93,8 @@ Delay
 Delay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.364240 ms
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 214.
-Total: 10.603589 ms (FindLiveObjects: 0.091962 ms CreateObjectMapping: 0.066919 ms MarkObjects: 0.635115 ms  DeleteObjects: 9.808361 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 22f4 -> priority: 1 
-  Thread -> id: 226c -> priority: 1 
+  Thread -> id: 2ce8 -> priority: 1 
+  Thread -> id: 29fc -> priority: 1 
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}

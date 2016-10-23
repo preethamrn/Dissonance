@@ -40,21 +40,12 @@ public class SyncClient : NetworkBehaviour {
     }
 
 
-
-    public void MeGameOver() {
-        CmdGameOver();
-    }
-
+    //Communicating Game Over from Loser side to Winner
+    public void MeGameOver() { CmdGameOver(); }
     [Command]
-    void CmdGameOver() {
-        RpcGameOver();
-    }
-
+    void CmdGameOver() { RpcGameOver(); }
     [ClientRpc]
-    void RpcGameOver() {
-        GameOver();
-    }
-
+    void RpcGameOver() { GameOver(); }
     void GameOver() {
         if (!me) {
             Debug.Log("WIN!");
@@ -62,18 +53,13 @@ public class SyncClient : NetworkBehaviour {
             FindObjectOfType<LaneClick>().setGameOver();
         }
     }
-
-    public void MeReady() {
-        CmdReady();
-    }
+    
+    //Communicating ready state
+    public void MeReady() { CmdReady(); }
     [Command]
-    void CmdReady() {
-        RpcReady();
-    }
+    void CmdReady() { RpcReady(); }
     [ClientRpc]
-    void RpcReady() {
-        Ready();
-    }
+    void RpcReady() { Ready(); }
     void Ready() {
         if (!me) {
             FindObjectOfType<LaneClick>().setEnemyReady();

@@ -23,6 +23,8 @@ public class LaneClick : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (!enemyReady) return; 
+
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
@@ -50,7 +52,8 @@ public class LaneClick : MonoBehaviour {
 
     void PlayerReady() {
         FindObjectOfType<SyncClient>().MeReady();
+        if (enemyReady) CancelInvoke("PlayerReady");
     }
 
-    public void setEnemyReady() { Debug.Log("Enemy Ready");  enemyReady = true; CancelInvoke("PlayerReady"); }
+    public void setEnemyReady() { Debug.Log("Enemy Ready");  enemyReady = true; }
 }
