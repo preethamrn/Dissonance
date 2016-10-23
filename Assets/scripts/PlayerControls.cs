@@ -36,4 +36,8 @@ public class PlayerControls : MonoBehaviour {
     public void animate() {
         player.GetComponent<Animator>().SetTrigger("pulse");
     }
+
+    public int getLane() {
+        return lane;
+    }
 }
