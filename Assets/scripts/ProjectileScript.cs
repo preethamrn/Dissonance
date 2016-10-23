@@ -43,7 +43,7 @@ public class ProjectileScript : MonoBehaviour {
             projectileList[i].m_height += projectileList[i].m_velocity;
 
             //have some effect if player is there, and delete
-            if (projectileList[i].m_height <=0 || projectileList[i].m_height >= 8) {
+            if (projectileList[i].m_height < 0 || projectileList[i].m_height >= ApplicationModel.height) {
                 Destroy(projectileList[i].obj);
                 projectileList.RemoveAt(i);
                 i--; //upper elements shift down into empty spot, check index again
@@ -65,5 +65,12 @@ public class ProjectileScript : MonoBehaviour {
         foreach (Projectile p in projectileList) {
             p.obj.GetComponent<Animator>().SetTrigger("pulse");
         }
+    }
+
+    public bool collisions(int x, int y, int type) {
+        foreach (Projectile p in projectileList) {
+            if (p.m_lane == x && p.m_height == y && p.m_type == type) return true;
+        }
+        return false;
     }
 }
