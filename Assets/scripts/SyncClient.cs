@@ -4,20 +4,21 @@ using UnityEngine.Networking;
 
 public class SyncClient : NetworkBehaviour {
 
-	
+    bool me;
 	// Use this for initialization
 	void Start () {
 		Who who = FindObjectOfType<Who>();
 		if (isLocalPlayer) {
-			who.SetMe(gameObject);
+            me = true;
+            who.SetMe(gameObject);
 		} else {
+            me = false;
 			who.SetNotMe(gameObject);
 		}
 	}
 
     public void MeChangedLane(int lane) {
-        if(isLocalPlayer)
-            CmdChangeLane(lane);
+        CmdChangeLane(lane);
     }
 
 	[Command]
@@ -31,7 +32,9 @@ public class SyncClient : NetworkBehaviour {
 	} 
 
 	void SetLane(int l) {
-        Debug.Log("Enemy at: " + l.ToString());
-        FindObjectOfType<EnemyControls>().move(l);
+        if (!me) {
+            Debug.Log("Enemy at: " + l.ToString());
+            FindObjectOfType<EnemyControls>().move(l);
+        }
 	}
 }
