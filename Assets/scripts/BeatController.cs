@@ -59,7 +59,7 @@ public class BeatController : MonoBehaviour {
                 countdown.text = "";
             }
 
-			Debug.Log("Delay");
+			//Debug.Log("Delay");
             animate();
         }
 
@@ -83,7 +83,7 @@ public class BeatController : MonoBehaviour {
                 if (!recievedInput) {
                     // the player lost
                     //Debug.Log("No Move");
-                } else if (illegalMove) ;
+                } else if (illegalMove) {};
 
 				//Debug.Log("Beat");
 
