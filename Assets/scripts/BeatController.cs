@@ -98,7 +98,11 @@ public class BeatController : MonoBehaviour {
                 } else if (playerCol) {
                     Debug.Log("YOU LOSE");
                     FindObjectOfType<Text>().text = "YOU LOSE";
-                    FindObjectOfType<SyncClient>().MeGameOver();
+                    //FindObjectOfType<SyncClient>().MeGameOver();
+                    FindObjectOfType<LaneClick>().setGameOver();
+                } else if (enemyCol) {
+                    Debug.Log("YOU WIN");
+                    FindObjectOfType<Text>().text = "YOU WIN";
                     FindObjectOfType<LaneClick>().setGameOver();
                 }
                 beat++;

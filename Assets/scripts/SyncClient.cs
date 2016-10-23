@@ -40,7 +40,7 @@ public class SyncClient : NetworkBehaviour {
     }
 
 
-    //Communicating Game Over from Loser side to Winner
+    /*//Communicating Game Over from Loser side to Winner
     public void MeGameOver() { CmdGameOver(); }
     [Command]
     void CmdGameOver() { RpcGameOver(); }
@@ -52,17 +52,5 @@ public class SyncClient : NetworkBehaviour {
             FindObjectOfType<Text>().text = "YOU WIN!";
             FindObjectOfType<LaneClick>().setGameOver();
         }
-    }
-    
-    //Communicating ready state
-    public void MeReady() { CmdReady(); }
-    [Command]
-    void CmdReady() { RpcReady(); }
-    [ClientRpc]
-    void RpcReady() { Ready(); }
-    void Ready() {
-        if (!me) {
-            FindObjectOfType<LaneClick>().setEnemyReady();
-        }
-    }
+    }*/
 }
