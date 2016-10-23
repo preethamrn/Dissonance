@@ -53,16 +53,4 @@ public class SyncClient : NetworkBehaviour {
             FindObjectOfType<LaneClick>().setGameOver();
         }
     }
-    
-    //Communicating ready state
-    public void MeReady() { CmdReady(); }
-    [Command]
-    void CmdReady() { RpcReady(); }
-    [ClientRpc]
-    void RpcReady() { Ready(); }
-    void Ready() {
-        if (!me) {
-            FindObjectOfType<LaneClick>().setEnemyReady();
-        }
-    }
 }

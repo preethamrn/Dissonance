@@ -8,6 +8,7 @@ public class BeatController : MonoBehaviour {
     EnemyControls enemy;
     ProjectileScript projectileScript;
     Text countdown;
+    public Camera mainCamera;
 
     const float BPM = 107f;
 	const float beatCooldown = 60 / BPM;
@@ -25,6 +26,7 @@ public class BeatController : MonoBehaviour {
 	bool playerMoved;
     bool animated;
 
+    bool go = false;
 
 	void Start () {
 
@@ -39,12 +41,28 @@ public class BeatController : MonoBehaviour {
 
 		totalTime = 0f;
 
+        mainCamera.gameObject.GetComponent<AudioSource>().Pause();
+
 		reset();
+
+        //Debug.Log("Trying to complete stage 1");
+        PlayerInitiateConnection pic = FindObjectOfType<PlayerInitiateConnection>();
+        Debug.Log("Trying to complete stage 1");
+        pic.CompleteStage1();
 
 	}
 
+    public void Go() {
+        go = true;
+        mainCamera.gameObject.GetComponent<AudioSource>().Play();
+    }
+
 	// Update is called once per frame
 	void Update () {
+
+        if (!go) {
+            return;
+        }
 
 		beatCooldownLeft -= Time.deltaTime;
 		totalTime += Time.deltaTime;
