@@ -19,6 +19,7 @@ public class Projectile
             case 2:
                 m_height = ApplicationModel.height - 2;
                 m_velocity = -1;
+                obj.transform.Rotate(new Vector3(0, 0, 180));
                 break;
             default:
                 //Debug.Log("Error, not correct type for projectile");
@@ -58,5 +59,11 @@ public class ProjectileScript : MonoBehaviour {
         projectileList.Add(new Projectile(type, lane, obj));
         int i = projectileList.Count - 1;
         projectileList[i].obj.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(projectileList[i].m_lane + 0.5) - ApplicationModel.xRatio, -14 + 4 * projectileList[i].m_height);
+    }
+
+    public void animate() {
+        foreach (Projectile p in projectileList) {
+            p.obj.GetComponent<Animator>().SetTrigger("pulse");
+        }
     }
 }

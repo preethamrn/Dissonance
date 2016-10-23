@@ -4,68 +4,23 @@ using UnityEngine.Networking;
 
 public class SyncClient : NetworkBehaviour {
 
-	
+    bool me;
 	// Use this for initialization
 	void Start () {
-		Who[] whos = FindObjectsOfType(typeof(Who)) as Who[];
+		Who who = FindObjectOfType<Who>();
 		if (isLocalPlayer) {
-			
-			whos[0].SetMe(gameObject);
-		}
-		else {
-			whos[0].SetNotMe(gameObject);
-		}
-	
-	}
-
-	//[SyncVar(hook = "OnLaneChange")]
-	//[SyncVar]
-	int lane = 2; //This lane variable is only active for the OTHER client!
-	
-	// Update is called once per frame
-
-	void Update () {
-
-		if (isLocalPlayer) {
-		
-			if (Input.GetKeyDown(KeyCode.Alpha1)) {
-				//lane = 0;
-				CmdChangeLane(0);
-			}
-			else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-				//lane = 1;
-				CmdChangeLane(1);
-			}
-			else if (Input.GetKeyDown(KeyCode.Alpha3)) {
-				//lane = 2;
-				CmdChangeLane(2);
-			}
-			else if (Input.GetKeyDown(KeyCode.Alpha4)) {
-				//lane = 3;
-				CmdChangeLane(3);
-			}
-			else if (Input.GetKeyDown(KeyCode.Alpha5)) {
-				//lane = 4;
-				CmdChangeLane(4);
-			}
-			//Debug.Log("My Lane Is " + lane);
-		}
-		else {
-			//Debug.Log("NotMy Lane Is " + lane);
+            me = true;
+            who.SetMe(gameObject);
+		} else {
+            me = false;
+			who.SetNotMe(gameObject);
 		}
 	}
 
-	/*
-	void OnLaneChange(int lane) {
-		Debug.Log("Received Change");
-		if (isLocalPlayer) {
+    public void MeChangedLane(int lane) {
+        CmdChangeLane(lane);
+    }
 
-		}
-		else {
-			Debug.Log("NotMe Lane Changed To " + lane);
-		}
-	}
-	*/
 	[Command]
 	void CmdChangeLane(int lane) {
 		RpcChangeLane(lane);
@@ -77,6 +32,9 @@ public class SyncClient : NetworkBehaviour {
 	} 
 
 	void SetLane(int l) {
-		lane = l;
+        if (!me) {
+            Debug.Log("Enemy at: " + l.ToString());
+            FindObjectOfType<EnemyControls>().move(l);
+        }
 	}
 }
