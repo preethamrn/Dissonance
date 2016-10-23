@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class LaneClick : MonoBehaviour {
 
     BeatController beatController;
+    bool gameOver = false;
 
     // Use this for initialization
     void Start () {
@@ -20,10 +22,13 @@ public class LaneClick : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
-            //Debug.Log(touch);
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
             Debug.Log("Hit Lane" + lane);
-            beatController.input(lane);
+            if (!gameOver) beatController.input(lane);
+            else {
+                NetworkServer.DisconnectAll();
+                Application.LoadLevel("connect");
+            }
         }
 
         /*Touch[] touches = Input.touches;
@@ -34,4 +39,6 @@ public class LaneClick : MonoBehaviour {
             beatController.input(lane);
         }*/
     }
+
+    public void setGameOver() { gameOver = true;  }
 }
