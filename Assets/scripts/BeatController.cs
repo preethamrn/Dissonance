@@ -18,13 +18,13 @@ public class BeatController : MonoBehaviour {
 	float totalTime;
 
 	int laneToMove;
+
 	int beat;
 
 	bool illegalMove;
 	bool recievedInput;
 	bool playerMoved;
     bool animated;
-
 
 	void Start () {
 
@@ -40,7 +40,6 @@ public class BeatController : MonoBehaviour {
 		totalTime = 0f;
 
 		reset();
-
 	}
 
 	// Update is called once per frame
@@ -48,6 +47,8 @@ public class BeatController : MonoBehaviour {
 
 		beatCooldownLeft -= Time.deltaTime;
 		totalTime += Time.deltaTime;
+
+		Debug.Log (countdown.fontSize);
 
 		if (beat < beatDelay && beatCooldownLeft + buffer <= 0) {
 			beatCooldownLeft = (beat * beatCooldown) - totalTime;
