@@ -6,7 +6,6 @@ public class LaneClick : MonoBehaviour {
 
     BeatController beatController;
     bool gameOver = false;
-    bool enemyReady = false;
 
     // Use this for initialization
     void Start () {
@@ -17,13 +16,11 @@ public class LaneClick : MonoBehaviour {
         ApplicationModel.yRatio = 16;
         ApplicationModel.xRatio = (float) ApplicationModel.screenSizeX / (float) ApplicationModel.screenSizeY * (float) ApplicationModel.yRatio;
         //Debug.Log(ApplicationModel.screenSizeX.ToString() + " " + ApplicationModel.screenSizeY.ToString());
-        
-        InvokeRepeating("PlayerReady", 0, 0.1f);
+       
     }
 
     // Update is called once per frame
-    void Update () {
-        if (!enemyReady) return; 
+    void Update () { 
 
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
@@ -49,11 +46,4 @@ public class LaneClick : MonoBehaviour {
         NetworkServer.DisconnectAll();
         Application.LoadLevel("connect");
     }
-
-    void PlayerReady() {
-        FindObjectOfType<SyncClient>().MeReady();
-        if (enemyReady) CancelInvoke("PlayerReady");
-    }
-
-    public void setEnemyReady() { Debug.Log("Enemy Ready");  enemyReady = true; }
 }
