@@ -13,8 +13,8 @@ public class PlayerIntiateConnection : NetworkBehaviour {
 			if (!nextScene && NetworkServer.connections.Count >= 2) {
     	    	Debug.Log("Two Players have connected");
     	    	
-    	    	NetworkManager[] nm = FindObjectsOfType(typeof(NetworkManager)) as NetworkManager[];
-    	    	nm[0].ServerChangeScene("game");
+    	    	NetworkManager nm = FindObjectOfType<NetworkManager>();
+    	    	nm.ServerChangeScene("game");
     	    	nextScene = true;
     	    }
     	//}

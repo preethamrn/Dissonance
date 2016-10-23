@@ -22,7 +22,6 @@ public class LaneClick : MonoBehaviour {
             Vector2 touch = Input.mousePosition;
             //Debug.Log(touch);
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
-            //Instantiate(go, new Vector3(18*touch.x/screenSizeX-9, 32*touch.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
             beatController.input(lane);
         }
@@ -31,7 +30,6 @@ public class LaneClick : MonoBehaviour {
         if (touches.Length > 0) {
             Touch touch = touches[0];
             int lane = (int)touch.position.x / (screenSizeX / 5);
-            //Instantiate(go, new Vector3(18*touch.position.x/screenSizeX-9, 32*touch.position.y/screenSizeY-16, 0), Quaternion.identity);
             Debug.Log("Hit Lane" + lane);
             beatController.input(lane);
         }*/
