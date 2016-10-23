@@ -19,7 +19,7 @@ public class Projectile
             case 2:
                 m_height = ApplicationModel.height - 2;
                 m_velocity = -1;
-                obj.transform.Rotate(new Vector3(0, 0, Mathf.PI));
+                obj.transform.Rotate(new Vector3(0, 0, 180));
                 break;
             default:
                 //Debug.Log("Error, not correct type for projectile");

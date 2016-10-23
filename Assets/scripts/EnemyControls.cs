@@ -5,13 +5,13 @@ public class EnemyControls : MonoBehaviour {
 
     int lane = 2;
     GameObject player;
-    GameObject bulletPrefab;
+    GameObject enemyBullet;
     ProjectileScript projectileScript;
 
     // Use this for initialization
     void Start() {
         GameObject playerPrefab = (GameObject)Resources.Load("Player");
-        GameObject bulletPrefab = (GameObject)Resources.Load("Bullet");
+        enemyBullet = (GameObject)Resources.Load("Bullet");
         projectileScript = FindObjectOfType<ProjectileScript>();
         player = Instantiate(playerPrefab);
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(2.5) - ApplicationModel.xRatio, 14);
@@ -27,7 +27,7 @@ public class EnemyControls : MonoBehaviour {
         else if (newLane < lane) lane--;
 
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, 14); //move player
-        projectileScript.addProjectile(2, lane, Instantiate(bulletPrefab));
+        projectileScript.addProjectile(2, lane, Instantiate(enemyBullet));
     }
 
     public void animate() {

@@ -7,7 +7,6 @@ public class BeatController : MonoBehaviour {
     PlayerControls player;
     EnemyControls enemy;
     ProjectileScript projectileScript;
-    GameObject playerBullet;
     Text countdown;
 
 
@@ -32,7 +31,6 @@ public class BeatController : MonoBehaviour {
         player = FindObjectOfType<PlayerControls>();
         enemy = FindObjectOfType<EnemyControls>();
         projectileScript = FindObjectOfType<ProjectileScript>();
-        playerBullet = (GameObject)Resources.Load("Bullet");
         countdown = FindObjectOfType<Text>();
 
         beatCooldownLeft = 0f;
