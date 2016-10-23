@@ -57,7 +57,7 @@ public class BeatController : MonoBehaviour {
             countdown.text = (beatDelay - beat).ToString();
             if (beat == beatDelay) Destroy(countdown);
 
-			Debug.Log("Delay");
+			//Debug.Log("Delay");
             animate();
         }
 
@@ -81,7 +81,7 @@ public class BeatController : MonoBehaviour {
                 if (!recievedInput) {
                     // the player lost
                     //Debug.Log("No Move");
-                } else if (illegalMove) ;
+                } else if (illegalMove) {};
 
 				//Debug.Log("Beat");
 
