@@ -35,7 +35,7 @@ public class PlayerControls : MonoBehaviour {
         }
 
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, -14); //move player
-        projectileScript.addProjectile(1, lane, Instantiate(playerBullet));
+        projectileScript.addProjectile(1, newLane, Instantiate(playerBullet));
     }
 
     public void animate() {

@@ -9,9 +9,9 @@ public class BeatController : MonoBehaviour {
     ProjectileScript projectileScript;
     Text countdown;
 
-    const float BPM = 107f;
-	const float beatCooldown = 60 / BPM;
-	const float buffer = 0.2f;
+    public float BPM = 107f;
+	float beatCooldown = 0;
+	const float buffer = 0.1f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
@@ -33,6 +33,7 @@ public class BeatController : MonoBehaviour {
         projectileScript = FindObjectOfType<ProjectileScript>();
         countdown = FindObjectOfType<Text>();
 
+        beatCooldown = 60/BPM;
         beatCooldownLeft = 0f;
         laneToMove = 2;
 		beat = 0;
