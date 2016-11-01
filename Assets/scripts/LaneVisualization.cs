@@ -55,7 +55,7 @@ public class LaneVisualization : MonoBehaviour {
 		}
 
 		for (int i = 0; i < 5; i++) {
-			Debug.Log("SumData: " + i + " : " + sums[i] * 1000);
+			//Debug.Log("SumData: " + i + " : " + sums[i] * 1000);
 			lanes[i].GetComponent<SpriteRenderer>().color = HSVtoRGB (sums [i] * 1, 1, 1, 1);
 			//for (int j = i; j < i + 2; j++) {
 				LineRenderer lr = waves[i].GetComponent<LineRenderer>();

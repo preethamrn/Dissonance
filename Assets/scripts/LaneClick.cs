@@ -24,8 +24,9 @@ public class LaneClick : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             Vector2 touch = Input.mousePosition;
             int lane = (int)(touch.x / (ApplicationModel.screenSizeX / 5.0));
-            Debug.Log("Hit Lane" + lane);
-            if (!gameOver) beatController.input(lane);
+            int player = (int)(touch.y / (ApplicationModel.screenSizeY / 2.0));
+            Debug.Log("Hit Lane" + lane + " Player " + player);
+            if (!gameOver) beatController.input(lane, player);
             else {
                 Invoke("endGame", 3);
             }
@@ -43,6 +44,6 @@ public class LaneClick : MonoBehaviour {
     public void setGameOver() { gameOver = true; }
     void endGame() {
         //NetworkServer.DisconnectAll();
-        Application.LoadLevel("connect");
+        //Application.LoadLevel("connect");
     }
 }

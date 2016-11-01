@@ -11,18 +11,22 @@ public class BeatController : MonoBehaviour {
 
     public float BPM = 107f;
 	float beatCooldown = 0;
-	const float buffer = 0.1f;
+	const float buffer = 0.2f;
 	const int beatDelay = 16;
 
 	float beatCooldownLeft;
 	float totalTime;
 
-	int laneToMove;
+	int laneToMove0;
+    int laneToMove1;
 	int beat;
 
-	bool illegalMove;
-	bool recievedInput;
-	bool playerMoved;
+	bool illegalMove0;
+    bool illegalMove1;
+	bool recievedInput0;
+    bool recievedInput1;
+	bool playerMoved0;
+    bool playerMoved1;
     bool animated;
 
 
@@ -35,7 +39,8 @@ public class BeatController : MonoBehaviour {
 
         beatCooldown = 60/BPM;
         beatCooldownLeft = 0f;
-        laneToMove = 2;
+        laneToMove0 = 2;
+        laneToMove1 = 2;
 		beat = 0;
 
 		totalTime = 0f;
@@ -65,15 +70,23 @@ public class BeatController : MonoBehaviour {
         }
 
 		else if (beat >= beatDelay) {
-			if (illegalMove) {
+			if (illegalMove0) {
 				// the player lost
 				//Debug.Log("Illegal Move");
 			}
-
-			else if (recievedInput && !playerMoved) {
-				player.move(laneToMove);
-				playerMoved = true;
+			else if (recievedInput0 && !playerMoved0) {
+				player.move(laneToMove0);
+				playerMoved0 = true;
 			}
+
+            if (illegalMove1) {
+                // the player lost
+                //Debug.Log("Illegal Move");
+            }
+            else if (recievedInput1 && !playerMoved1) {
+                enemy.move(laneToMove1);
+                playerMoved1 = true;
+            }
 
             if (!animated && beatCooldownLeft - buffer <= 0) {
                 animate();
@@ -81,10 +94,10 @@ public class BeatController : MonoBehaviour {
             }
 
 			if (beatCooldownLeft + buffer <= 0) {
-                if (!recievedInput) {
+                if (!recievedInput0) {
                     // the player lost
                     //Debug.Log("No Move");
-                } else if (illegalMove) {};
+                } else if (illegalMove0) {};
 
 				//Debug.Log("Beat");
 
@@ -113,21 +126,34 @@ public class BeatController : MonoBehaviour {
 		}
 	}
 
-	public void input(int lane) {
+	public void input(int lane, int p) {
+        //p = 0 is the player, p = 1 is the enemy
 
-		if ((beatCooldownLeft <= (2 * buffer)) && !playerMoved) {
-			laneToMove = lane;
-		} else {
-			illegalMove = true;
-		}
-
-		recievedInput = true;
+        if (p == 0) {
+		  if ((beatCooldownLeft <= (2 * buffer)) && !playerMoved0) {
+		   	laneToMove0 = lane;
+		  } else {
+			illegalMove0 = true;
+		  }
+		    recievedInput0 = true;
+        }
+        else if (p == 1) {
+            if ((beatCooldownLeft <= (2 * buffer)) && !playerMoved1) {
+                laneToMove1 = lane;
+            } else {
+                illegalMove1 = true;
+            }
+                recievedInput1 = true;
+        }
 	}
 
 	void reset() {
-		recievedInput = false;
-    	playerMoved = false;
-    	illegalMove = false;
+		recievedInput0 = false;
+    	playerMoved0 = false;
+    	illegalMove0 = false;
+        recievedInput1 = false;
+        playerMoved1 = false;
+        illegalMove1 = false;
 
         animated = false;
 	}

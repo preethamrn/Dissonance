@@ -33,7 +33,7 @@ public class EnemyControls : MonoBehaviour {
 
         player.transform.position = new Vector2(ApplicationModel.xRatio * 2 / 5 * (float)(lane + 0.5) - ApplicationModel.xRatio, 14); //move player
         projectileScript.addProjectile(2, newLane, Instantiate(enemyBullet));
-    }
+    }   
 
     public void animate() {
         player.GetComponent<Animator>().SetTrigger("pulse");
