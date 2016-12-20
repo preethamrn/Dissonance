@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GridInit : MonoBehaviour {
+public class GameInit : MonoBehaviour {
     
     // Use this for initialization
     void Start() {
@@ -15,5 +15,28 @@ public class GridInit : MonoBehaviour {
             //gameObject.GetComponent<LaneVisualization>().AddLane(lane);
         }
 
+        StartCoroutine(PauseAudio());
+        StartCoroutine(WaitForPlayerTwo());
+    }
+
+    IEnumerator PauseAudio() {
+        yield return new WaitUntil(audioPlaying);
+        GetComponent<AudioSource>().Pause();
+    }
+
+    IEnumerator WaitForPlayerTwo() {
+        yield return new WaitUntil(areTwoPlayers);
+        BeatController bc = gameObject.AddComponent<BeatController>();
+        bc.BPM = 90;
+        GetComponent<AudioSource>().Play();
+        Debug.Log("Got player 2. Game starting");
+    }
+
+    bool areTwoPlayers() {
+        return GameObject.FindGameObjectsWithTag("Player").Length == 2;
+    }
+
+    bool audioPlaying() {
+        return GetComponent<AudioSource>().isPlaying;
     }
 }

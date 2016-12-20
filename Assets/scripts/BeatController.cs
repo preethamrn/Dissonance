@@ -9,7 +9,7 @@ public class BeatController : MonoBehaviour {
     ProjectileScript projectileScript;
     Text countdown;
 
-    public float BPM = 107f;
+    public float BPM;
 	float beatCooldown = 0;
 	const float buffer = 0.1f;
 	const int beatDelay = 16;
